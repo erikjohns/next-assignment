@@ -1,17 +1,23 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 import Counter from "@/app/components/Counter";
 import GitHubLink from "@/app/components/GitHubLink";
 import SearchBar from "@/app/components/SearchBar";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-        <h1>Erik Johns</h1>
-        <Counter incrementAmount={1} buttonColor={"green"} />
-        <Counter incrementAmount={2} buttonColor={"blue"} />
-        <GitHubLink />
-        <SearchBar />
-    </div>
+      <div className={"outer-container"}>
+          <div className={"container"}>
+              <h1>Erik Johns - NextJS Assignment</h1>
+              <div className={"counters"}>
+                  <Counter incrementAmount={1} buttonColor={"lightgreen"}/>
+                  <Counter incrementAmount={2} buttonColor={"lightblue"}/>
+              </div>
+              <GitHubLink/>
+              <div className={'shop-link'}>
+                  <p>Visit my shop here: </p><Link href='/shop'>Shop</Link>
+              </div>
+          </div>
+      </div>
   );
 }
